@@ -27,7 +27,7 @@ const apps = [
   },
   {
     name: "vueApp",
-    entry: "//localhost:8686",
+    entry: "//localhost:9999",
     container: "#subapp-viewport",
     activeRule: "/vue",
   },
