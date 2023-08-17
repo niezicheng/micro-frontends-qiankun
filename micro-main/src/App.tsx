@@ -1,14 +1,15 @@
+import Routes from './router'
 import './App.css'
 
-function App() {
+interface IAppProps {
+  loading?: boolean;
+}
+
+function App(props: IAppProps) {
+  console.log('props:', props)
   return (
     <div className="App">
-      <header className="main-header">
-        <a href="/react">reactApp</a>
-        <a href="/vue">vueApp</a>
-        <a href="/angular">angularApp</a>
-      </header>
-      <div id="subapp-viewport"></div>
+      <Routes />
     </div>
   );
 }

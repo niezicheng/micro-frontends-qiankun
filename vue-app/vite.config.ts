@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import qiankun from 'vite-plugin-qiankun';
+import qiankunPlugin from 'vite-plugin-qiankun';
 import { name } from './package.json';
 
 const port = 9999; // dev port
@@ -10,7 +10,7 @@ const useDevMode = true; // 是否使用开发模式
 export default defineConfig(({ mode }) => ({
   plugins: [
     vue(),
-    qiankun(name, { useDevMode })
+    qiankunPlugin(name, { useDevMode })
   ],
   server: {
     port,

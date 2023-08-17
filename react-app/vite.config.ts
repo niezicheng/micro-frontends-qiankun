@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import qiankun from 'vite-plugin-qiankun';
+// import qiankunPlugin from 'vite-plugin-qiankun';
+import qiankunPlugin from './src/plugins/qiankun/vite-plugin-qiankun';
 import path from 'path'
 import { name } from './package.json';
 
@@ -10,8 +11,13 @@ const useDevMode = true; // 是否使用开发模式
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react(),
-    qiankun(name, { useDevMode })
+    react({
+      babel: {
+        babelrc: false,
+        plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]],
+      },
+    }),
+    qiankunPlugin(name, { useDevMode })
   ],
   server: {
     fsServe: {
