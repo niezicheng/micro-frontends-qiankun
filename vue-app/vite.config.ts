@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     port,
     cors: true,
+    origin: `http://localhost:${port}`,
   },
   // 生产模式下依旧不支持 publicPath, 需要将 vite.config.js 中 base 配置写死【致使多环境部署不便捷】
   base: mode === 'development' ? '/' : `http://127.0.0.1:${port}/`,

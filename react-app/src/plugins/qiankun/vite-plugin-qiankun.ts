@@ -76,7 +76,7 @@ const htmlPlugin: PluginFn = (qiankunName, microOption) => {
       return;
     }
     const script$ = $(scriptTag);
-    const moduleSrc = script$.attr("src");
+    const moduleSrc = script$.attr("src") || "";
     let appendBase = "";
     if (microOption.useDevMode && !isProduction) {
       appendBase =

@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 // import qiankunPlugin from 'vite-plugin-qiankun';
 import qiankunPlugin from './src/plugins/qiankun/vite-plugin-qiankun';
-import path from 'path'
 import { name } from './package.json';
 
 const port = 8888; // dev port
@@ -20,9 +19,6 @@ export default defineConfig(({ mode }) => ({
     qiankunPlugin(name, { useDevMode })
   ],
   server: {
-    fsServe: {
-      root: path.join(process.cwd(), '../../')
-    },
     port,
     cors: true,
   },
