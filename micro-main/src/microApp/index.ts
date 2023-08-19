@@ -6,8 +6,10 @@ import {
   setDefaultMountApp,
   runAfterFirstMounted,
 } from 'qiankun'
-import { microApps } from './config'
-import { TInitQiankun } from './types'
+import { microApps } from 'microApp/config'
+import { TInitQiankun } from 'microApp/types'
+import { store } from 'store'
+import { commonActions } from 'store/common'
 
 // 注册微应用
 export const registerApp = (props: any) => {
@@ -36,10 +38,11 @@ export const registerApp = (props: any) => {
         console.log('before mount ===', app.name)
         resolve('beforeMount')
       }),
-    // qiankun 生命周期钩子 - 卸载后
+    // qiankun 生命周期钩子 - 挂载后
     afterMount: (app) => {
       return new Promise((resolve) => {
         console.log('after mount ===', app.name)
+        store.dispatch(commonActions.setMicroAppIsLoading(false))
         resolve('afterMount')
       })
     },
@@ -69,7 +72,7 @@ export const initQiankun = (props?: TInitQiankun) => {
   registerApp(props)
 
   // 设置默认进入的子应用
-  setDefaultMountApp("/micro/react");
+  setDefaultMountApp("/micro/reactApp");
 
   // 启动 qiankun
   start()
