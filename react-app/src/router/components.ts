@@ -1,3 +1,4 @@
 import { lazy } from 'react'
+import { SuspenseWrap } from 'components'
 
-export const HomeComponent = lazy(() => import('pages/Home'))
+export const HomeComponent = SuspenseWrap(lazy(() => import('pages/Home')))

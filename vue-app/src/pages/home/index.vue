@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div class="vue-app">
-    <router-view />
+  <div>
+    <h1>Vue Home Page</h1>
   </div>
 </template>
 

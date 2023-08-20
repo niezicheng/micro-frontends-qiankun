@@ -12,7 +12,7 @@ const mainRoutes = {
     },
     {
       path: '/about',
-      element: <h1>about</h1>,
+      element: <h1>React About Page</h1>,
     },
     { path: '*', element: <div>*</div> },
   ],
