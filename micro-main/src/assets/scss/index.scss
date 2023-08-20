@@ -1,3 +1,9 @@
+#root {
+  flex: 1;
+  height: 100vh;
+  text-align: center;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,7 +34,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 h1 {
@@ -65,5 +71,36 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+.micro-app {
+  height: 100%;
+  .layout {
+    height: 100%;
+    .layout-header {
+      display: flex;
+      background-color: antiquewhite;
+      height: 48px;
+      align-items: center;
+      color: #646cff;
+      font-weight: 500;
+      padding: 0 16px;
+    }
+    .layout-container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      .layout-left {
+        width: 200px;
+        background-color: #f9f9f9;;
+        display: flex;
+        flex-direction: column;
+      }
+      .layout-right {
+        flex: 1;
+        background-color: #fff;
+      }
+    }
   }
 }

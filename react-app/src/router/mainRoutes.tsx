@@ -1,4 +1,6 @@
 import Layout from "layout"
+import { HomeComponent } from 'router/components'
+
 
 const mainRoutes = {
   path: '/',
@@ -6,13 +8,13 @@ const mainRoutes = {
   children: [
     {
       path: '/home',
-      element: <div>home</div>,
+      element: <HomeComponent />,
     },
     {
       path: '/about',
-      element: <div>about</div>,
+      element: <h1>about</h1>,
     },
-    { path: '*', element: null },
+    { path: '*', element: <div>*</div> },
   ],
 }
 

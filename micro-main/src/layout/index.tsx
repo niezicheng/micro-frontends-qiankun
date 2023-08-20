@@ -10,7 +10,7 @@ const reactSubApps = ['reactApp', 'reactAppOne', 'reactAppTwo']
 const vueSubApps = ['vueApp', 'vueAppOne', 'vueAppTwo']
 
 const Layout = () => {
-  const { currentApp } = useAppSelector((state) => state.common)
+  const { currentApp, microAppIsLoading } = useAppSelector((state) => state.common)
 
   let currentMenus: TMenuList = []
 
@@ -26,16 +26,32 @@ const Layout = () => {
     'background:#41b883;padding:1px; border-radius: 0 3px 3px 0;color: #fff', currentMenus) // 👈
 
   return (
-    <div className="layout-container">
+    <div className="layout">
       {/* <Counter />
       <Pokemon /> */}
-      <div className='layout-left'>
-        {currentMenus?.map((item) => (
-          <Link to={item.path} key={item.path}>{item.name}</Link>
-        ))}
+      <div className='layout-header'>
+        {
+          menusList.map((item, index) => (
+            <Link
+              key={item?.id || index}
+              to={item.path}
+              style={{ marginRight: '15px' }}
+            >
+              {item.name}
+            </Link>
+          ))
+        }
       </div>
-      <div className='layout-right'>
-        <Outlet />
+      <div className='layout-container'>
+        <div className='layout-left'>
+          {currentMenus?.map((item) => (
+            <Link to={item.path} key={item.path}>{item.name}</Link>
+          ))}
+        </div>
+        <div className='layout-right'>
+          {microAppIsLoading && <div className='layout-loading'>loading...</div>}
+          <Outlet />
+        </div>
       </div>
     </div>
   );

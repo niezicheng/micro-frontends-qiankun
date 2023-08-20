@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 // import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/es/helper';
 // 处理热更新【控制台报错 [import-html-entry]: error occurs while executing normal script <script type="module"></script> 错误】
 import { renderWithQiankun, qiankunWindow } from 'plugins/qiankun/helper';
-import App from './App'
-import './index.css'
+import App from 'App'
+import 'assets/scss/index.scss'
 
 const render = (props: { [x: string]: any; container?: any; }) => {
   const { container } = props;

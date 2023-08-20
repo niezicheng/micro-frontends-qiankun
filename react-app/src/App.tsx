@@ -1,9 +1,11 @@
 import Router from 'router'
-import './App.css'
 
 function App() {
-
-  return (<Router />)
+  return (
+    <div className="react-app">
+      <Router />
+    </div>
+  )
 }
 
 export default App
