@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 // import qiankunPlugin from 'vite-plugin-qiankun';
 import qiankunPlugin from './src/plugins/qiankun/vite-plugin-qiankun';
+import tsconfigPaths from 'vite-tsconfig-paths'
 import { name } from './package.json';
 
 const port = 8888; // dev port
@@ -16,7 +17,8 @@ export default defineConfig(({ mode }) => ({
         plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]],
       },
     }),
-    qiankunPlugin(name, { useDevMode })
+    qiankunPlugin(name, { useDevMode }),
+    tsconfigPaths(),
   ],
   server: {
     port,

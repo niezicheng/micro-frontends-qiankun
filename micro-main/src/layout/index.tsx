@@ -29,10 +29,14 @@ const Layout = () => {
     <div className="layout-container">
       {/* <Counter />
       <Pokemon /> */}
-      {currentMenus?.map((item) => (
-        <Link to={item.path} key={item.path}>{item.name}</Link>
-      ))}
-      <Outlet />
+      <div className='layout-left'>
+        {currentMenus?.map((item) => (
+          <Link to={item.path} key={item.path}>{item.name}</Link>
+        ))}
+      </div>
+      <div className='layout-right'>
+        <Outlet />
+      </div>
     </div>
   );
 }

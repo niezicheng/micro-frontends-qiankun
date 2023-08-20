@@ -5,11 +5,7 @@ import './App.css'
 
 function App() {
   useInitConfig()
-  return (
-    <div className="App">
-      <Routes />
-    </div>
-  );
+  return (<Routes />);
 }
 
 export default App
