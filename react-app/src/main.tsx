@@ -1,8 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-// import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/es/helper';
-// 处理热更新【控制台报错 [import-html-entry]: error occurs while executing normal script <script type="module"></script> 错误】
 import { renderWithQiankun, qiankunWindow } from 'plugins/qiankun/helper';
 import App from 'App'
 import 'assets/scss/index.scss'
@@ -37,6 +35,9 @@ renderWithQiankun({
     root.unmount(container ?
       container.querySelector("#root") :
       document.getElementById('root') as HTMLElement);
+  },
+  update(props) {
+    console.log("react18] react app update", props);
   },
 });
 

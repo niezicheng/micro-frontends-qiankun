@@ -22,9 +22,6 @@ const Layout = () => {
     currentMenus = menusList.find((item) => item.path === '/micro/vueApp')?.children || []
   }
 
-  console.log('%c👉  currentMenus: ',
-    'background:#41b883;padding:1px; border-radius: 0 3px 3px 0;color: #fff', currentMenus) // 👈
-
   return (
     <div className="layout">
       {/* <Counter />

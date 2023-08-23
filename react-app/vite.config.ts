@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// import qiankunPlugin from 'vite-plugin-qiankun';
 import qiankunPlugin from './src/plugins/qiankun/vite-plugin-qiankun';
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { name } from './package.json';
