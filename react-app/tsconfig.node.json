@@ -6,8 +6,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src"
   },
-  "include": ["vite.config.ts", "package.json", "src"],
+  "include": [
+    "vite.config.ts",
+    "package.json",
+    "src/plugins/qiankun/vite-plugin-qiankun.ts"
+  ],
 }

@@ -19,7 +19,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./src",
   },
   "include": ["src"],
+  "exclude": ["src/plugins/qiankun/vite-plugin-qiankun.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

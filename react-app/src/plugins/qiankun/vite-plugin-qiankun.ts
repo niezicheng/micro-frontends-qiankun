@@ -7,7 +7,7 @@ const appendBase =
 const createImport = (src: string, callback?: string) =>
   `import(${appendBase}'${src}').then(${callback})`;
 
-const createEntry = (entryScript) => `
+const createEntry = (entryScript: string | null) => `
 let RefreshRuntime;
 ${createImport(
   "/@react-refresh",
@@ -96,7 +96,7 @@ const htmlPlugin: PluginFn = (qiankunName, microOption) => {
 
     configureServer(server) {
       return () => {
-        server.middlewares.use((req, res, next) => {
+        server.middlewares.use((_req, res, next) => {
           if (isProduction) {
             next();
             return;
@@ -107,7 +107,7 @@ const htmlPlugin: PluginFn = (qiankunName, microOption) => {
             let [htmlStr, ...rest] = args;
             if (typeof htmlStr === "string") {
               const $ = cheerio.load(htmlStr);
-              module2DynamicImport($, $("script[src=/@vite/client]").get(0));
+              module2DynamicImport($, $("script[src=/@vite/client]").get(0)!);
               const reactRefreshScript = $("script[type=module]");
               reactRefreshScript.removeAttr("type").empty();
               const entryScript = $("#entry");
