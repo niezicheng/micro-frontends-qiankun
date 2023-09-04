@@ -75,7 +75,12 @@ export const initQiankun = (props?: TInitQiankun) => {
   setDefaultMountApp("/micro/reactApp");
 
   // 启动 qiankun
-  start()
+  start({
+    sandbox: {
+      // strictStyleIsolation: true,
+      // experimentalStyleIsolation: true,
+    }
+  })
   // 第一个子应用加载完毕回调
   runAfterFirstMounted(() => {
     console.log("[MainApp] first app mounted");

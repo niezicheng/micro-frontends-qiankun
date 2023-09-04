@@ -4,11 +4,7 @@ import { useInitConfig } from 'hooks'
 
 function App() {
   useInitConfig()
-  return (
-    <div className="micro-app">
-      <Routes />
-    </div>
-  );
+  return <Routes />
 }
 
 export default App

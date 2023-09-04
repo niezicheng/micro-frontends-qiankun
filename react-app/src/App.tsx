@@ -1,11 +1,7 @@
 import Router from 'router'
 
 function App() {
-  return (
-    <div className="react-app">
-      <Router />
-    </div>
-  )
+  return <Router />
 }
 
 export default App

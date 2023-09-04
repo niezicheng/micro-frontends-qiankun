@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.22.10",
+    "antd": "^5.8.6",
     "cheerio": "1.0.0-rc.12",
     "qiankun": "^2.10.12",
     "react": "^18.2.0",

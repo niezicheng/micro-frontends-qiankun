@@ -73,36 +73,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-.vue-app {
-  height: 100%;
-  .layout {
-    height: 100%;
-    .layout-header {
-      display: flex;
-      background-color: antiquewhite;
-      height: 48px;
-      align-items: center;
-      color: #646cff;
-      font-weight: 500;
-      padding: 0 16px;
-    }
-    .layout-container {
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      .layout-left {
-        width: 200px;
-        background-color: #f0f0f0;
-        display: flex;
-        flex-direction: column;
-      }
-      .layout-right {
-        padding: 2rem;
-        flex: 1;
-        background-color: #fff;
-        align-items: center;
-      }
-    }
-  }
-}

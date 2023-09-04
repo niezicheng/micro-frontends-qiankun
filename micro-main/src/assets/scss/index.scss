@@ -20,6 +20,34 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -74,33 +102,31 @@ button:focus-visible {
   }
 }
 
-.micro-app {
+// 应用布局样式
+.layout {
   height: 100%;
-  .layout {
+  .layout-header {
+    display: flex;
+    background-color: antiquewhite;
+    height: 48px;
+    align-items: center;
+    color: #646cff;
+    font-weight: 500;
+    padding: 0 16px;
+  }
+  .layout-container {
+    display: flex;
+    flex-direction: row;
     height: 100%;
-    .layout-header {
+    .layout-left {
+      width: 200px;
+      background-color: #f9f9f9;;
       display: flex;
-      background-color: antiquewhite;
-      height: 48px;
-      align-items: center;
-      color: #646cff;
-      font-weight: 500;
-      padding: 0 16px;
+      flex-direction: column;
     }
-    .layout-container {
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      .layout-left {
-        width: 200px;
-        background-color: #f9f9f9;;
-        display: flex;
-        flex-direction: column;
-      }
-      .layout-right {
-        flex: 1;
-        background-color: #fff;
-      }
+    .layout-right {
+      flex: 1;
+      background-color: #fff;
     }
   }
 }

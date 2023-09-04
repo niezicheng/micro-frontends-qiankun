@@ -2,9 +2,7 @@
 </script>
 
 <template>
-  <div class="vue-app">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style scoped>
