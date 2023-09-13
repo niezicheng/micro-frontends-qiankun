@@ -46,6 +46,7 @@ const Layout = () => {
           ))}
         </div>
         <div className='layout-right'>
+          <button>主应用(micro-main)按钮</button>
           {microAppIsLoading && <div className='layout-loading'>loading...</div>}
           <Outlet />
         </div>

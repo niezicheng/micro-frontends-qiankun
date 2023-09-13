@@ -8,11 +8,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -70,25 +65,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -97,12 +73,19 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+  a:hover {
+    color: #535bf2;
   }
 }
 
-// 应用布局样式
+// 主应用 layout 布局样式【子应用采用 scoped css 设置样式，不会收到影响】
 .layout {
   height: 100%;
   .layout-header {
@@ -125,8 +108,32 @@ button:focus-visible {
       flex-direction: column;
     }
     .layout-right {
+      padding: 16px;
       flex: 1;
       background-color: #fff;
     }
   }
+}
+
+// 该元素样式将设置为全局样式【即将会被设置到所有应用 button 元素上】
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+// 覆盖 reactApp layout scoped 样式
+._layout_1tw3u_1 {
+  padding-top: 30px
+}
+
+// 覆盖 vueApp layout scoped 样式
+.layout[data-v-051739fd] {
+  padding-top: 30px
 }
